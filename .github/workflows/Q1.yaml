@@ -14,8 +14,8 @@ jobs:
         run: cp XYZ.txt Q1_archive_XYZ.txt
       - name: Pousser
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Jonathan LECLERC"
+          git config user.email "jonathan.leclerc@etu.univ-lehavre.fr"
           git add Q1_archive_XYZ.txt
           git commit -m "Q1 : archive XYZ.txt" || exit 0
           git pull --rebase

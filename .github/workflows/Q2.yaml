@@ -1,0 +1,32 @@
+name: Q2
+on:
+  push:
+    paths: [ "XYZ.txt", ".github/workflows/Q2.yaml" ]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Créer Q2_archive_XYZ.txt
+        env:
+          TZ: Europe/Paris
+        run: |
+          {
+            echo "Nom Prénom : LECLERC Jonathan"
+            echo "Date d'exécution : $(date '+%d/%m/%Y %H:%M:%S')"
+            echo "----- Contenu de XYZ.txt -----"
+            cat XYZ.txt
+            echo "----- Taille de XYZ.txt -----"
+            echo "$(wc -c < XYZ.txt) octets"
+          } > Q2_archive_XYZ.txt
+      - name: Pousser
+        run: |
+          git config user.name "Jonathan LECLERC"
+          git config user.email "jonathan.leclerc@etu.univ-lehavre.fr"
+          git add Q2_archive_XYZ.txt
+          git commit -m "Q2 : archive XYZ.txt" || exit 0
+          git pull --rebase
+          git push
