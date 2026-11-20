@@ -2,6 +2,7 @@ name: Q4
 on:
   push:
     paths: [ "Q4.java" ]
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:

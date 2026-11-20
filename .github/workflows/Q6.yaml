@@ -2,6 +2,7 @@ name: Q6
 on:
   push:
     paths: [ "Q6.java" ]
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
