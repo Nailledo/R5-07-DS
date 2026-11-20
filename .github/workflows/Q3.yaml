@@ -1,8 +1,7 @@
 name: Q3
 on:
   push:
-    paths: [ "Q3.java", ".github/workflows/Q3.yaml" ]
-  workflow_dispatch:
+    paths: [ "Q3.java" ]
 permissions:
   contents: write
 jobs:
@@ -10,18 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Créer Q3_archive_java.txt
-        run: |
-          {
-            echo "Nom Prénom : LECLERC Jonathan"
-            echo "----- Q3.java -----"
-            cat Q3.java
-          } > Q3_archive_java.txt
-      - name: Pousser
-        run: |
-          git config user.name "LECLERC Jonathan"
+      - run: |
+          echo "Jonathan LECLERC" > Q3_archive_java.txt
+          cat Q3.java >> Q3_archive_java.txt
+          git config user.name "Jonathan LECLERC"
           git config user.email "jonathan.leclerc@etu.univ-lehavre.fr"
           git add Q3_archive_java.txt
-          git commit -m "Q3 : archive Q3.java" || exit 0
-          git pull --rebase
+          git commit -m "Q3 archive"
           git push
