@@ -1,0 +1,9 @@
+3a4,7
+> 	/**
+> 	 * Méthode Main
+> 	 * @param args
+> 	 */
+22c26
+<  20 407 Q6.java
+---
+>  24 450 Q6.java
