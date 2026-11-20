@@ -1,0 +1,23 @@
+name: Q6
+on:
+  push:
+    paths: [ "Q6.java" ]
+permissions:
+  contents: write
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          P=$(ls Q6_archive_*.txt | tail -1)
+          F=Q6_archive_$(date +%d-%m-%Y-%H%M%S).txt
+          echo "Jonathan LECLERC" > $F
+          cat Q6.java >> $F
+          wc -l -m Q6.java >> $F
+          diff $P $F > Q6_différences.txt || true
+          git config user.name "Jonathan LECLERC"
+          git config user.email "jonathan.leclerc@etu.univ-lehavre.fr"
+          git add Q6_archive_*.txt Q6_différences.txt
+          git commit -m "Q6 archive"
+          git push
