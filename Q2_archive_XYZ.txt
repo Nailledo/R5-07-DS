@@ -1,0 +1,5 @@
+Nom Prénom : LECLERC Jonathan
+Date d'exécution : 20/11/2026 13:58:09
+----- Contenu de XYZ.txt -----
+----- Taille de XYZ.txt -----
+0 octets
