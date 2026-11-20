@@ -1,5 +1,9 @@
 public class Q6
 {
+	/**
+	 * Méthode Main
+	 * @param args
+	 */
     public static void main(String[] args) 
 	{
         int n = Integer.parseInt(args[0]);
