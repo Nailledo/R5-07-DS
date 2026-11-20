@@ -1,0 +1,15 @@
+public class Q3 
+{
+    public static void main(String[] args) 
+	{
+        int n = Integer.parseInt(args[0]);
+
+        StringBuilder ligne = new StringBuilder();
+        for (int i = n; i >= 1; i--) 
+		{
+            ligne.append(i);
+            if (i > 1) ligne.append(" ");
+        }
+        System.out.println(ligne);
+    }
+}
